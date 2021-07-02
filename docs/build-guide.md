@@ -1,15 +1,12 @@
 ---
-id: build-build-with-polkadot
+id: build-guide
 title: Polkadot Builders Starter's Guide
 sidebar_label: Polkadot Builders Starter's Guide
 ---
 
-_This article is the maintained version of the blog post:
-[Everything you Need to Know to Prepare for Polkadot](https://medium.com/polkadot-network/everything-you-need-to-know-to-prepare-for-polkadot-32d08b929735)._
-
 Polkadot is a blockchain protocol with two goals: providing **shared security** among all connected
 parachains and allowing all connected chains to **interoperate** by using [XCMP](learn-crosschain).
-With the advent of [PDKs](build-pdk) like Parity Substrate and Cumulus, the time it takes to develop
+With the advent of [PDKs](build-parachains) like Parity Substrate and Cumulus, the time it takes to develop
 and launch a new chain has dropped significantly. While before it would take years to launch a new
 chain, now it may only take weeks or even days.
 
@@ -156,11 +153,11 @@ applicable to you.
 
 Now that you have determined that building a parachain or parathread is the right approach for your
 new project, the next step is to decide which framework to use. Frameworks for building a parachain
-or parathread are known as parachain development kits ([PDK](build-pdk)s). Currently, the only PDK
+or parathread are known as parachain development kits (PDKs). Currently, the only PDK
 available is Substrate and Cumulus from Parity Technologies.
 
 In the future, there will be many different PDKs available in different programming languages, just
-like there are multiple [implementations of the Polkadot Host](learn-implementations.md).
+like there are multiple [implementations of the Polkadot Host](learn-implementations).
 
 > **Call to Action:** Do you want to build a Parachain Development Kit from scratch? The Web3
 > Foundation is giving grants to teams who are doing this, learn more and apply on the
@@ -214,27 +211,7 @@ Integrating Cumulus with your Substrate chain will port it into a parachain capa
 Polkadot with minimal modification, possibly as little work as importing a crate and adding a few
 lines!
 
-### How to deploy your parachain or parathread in Polkadot
 
-#### Parachain
-
-In order to include your parachain into the Polkadot network, you will need to acquire a parachain
-slot.
-
-Parachain slots will be sold in open auctions, the mechanics of which can be found on the
-{{ polkadot: [parachain auction](learn-auction) :polkadot }}
-{{ kusama: [parachain auction](mirror-learn-auction) :kusama }} page of the wiki.
-
-#### Parathread
-
-Parathreads will not require a parachain slot, so you will not need to engage in the candle auction
-mechanism. Instead, you will be able to register your parathread code to the relay chain for a fee
-and from then be able to start participating in the per-block auctions for inclusion of your state
-transition into the relay chain.
-
-For more information on how parathread per-block auctions work, see the more detailed
-{{ polkadot: [parathread](learn-parathreads) :polkadot }}
-{{ kusama: [parathread](mirror-learn-parathreads) :kusama }} page.
 
 ## So you want to build a smart contract...
 
@@ -243,14 +220,14 @@ connect to Polkadot can support arbitrary state transitions, they can support sm
 
 Substrate presently supports smart contracts out-of-the-box in two ways:
 
-- The EVM pallet offered by [Frontier][].
+- The EVM pallet offered by [Frontier](https://github.com/paritytech/frontier). 
 - The [Contracts pallet][substrate contracts] in the FRAME library for Wasm based contracts.
 
 ### Frontier EVM Contracts
 
-[Frontier][] is the suite of tools that enables a Substrate chain to run Ethereum contacts (EVM)
-natively with the same API/RPC interface Ethereum exposes on Substrate. Ethereum Addresses can also
-be mapped directly to and from Substrate's SS58 sceme from existing accounts.
+[Frontier][] is the suite of tools that enables a Substrate chain to run Ethereum contacts 
+(EVM) natively with the same API/RPC interface Ethereum exposes on Substrate. Ethereum Addresses
+can also be mapped directly to and from Substrate's SS58 scheme from existing accounts.
 
 ### Contracts Pallet
 
@@ -340,11 +317,9 @@ As always, keep up to date with Polkadot and Kusama by following the
 
 Good luck!
 
-[substrate contracts]: https://github.com/paritytech/substrate/tree/master/frame/contracts
 [edgeware]: https://edgewa.re
 [edgeware documentation]: https://docs.edgewa.re/
 [edgeware contracts documentation]: https://contracts.edgewa.re/
 [plasm plasma]: https://github.com/staketechnologies/Plasm
 [moonbeam]: https://moonbeam.network
 [moonbeam docs]: https://docs.moonbeam.network/
-[frontier]: https://github.com/paritytech/frontier
