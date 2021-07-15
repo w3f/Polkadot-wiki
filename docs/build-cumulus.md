@@ -16,7 +16,7 @@ but still high-level description of Cumulus.
 
 ### Cumulus Consensus
 
-Cumulus Consensus is a consensus engine for Substrate that follows a Polkadot Relay Chain (i.e.,
+Cumulus Consensus is a a consensus engine for Substrate that follows a Polkadot Relay Chain (i.e.,
 parachains). This will run a Polkadot node internally, and dictate to the client and synchronization
 algorithms which chain to follow, finalize, and treat as correct.
 
